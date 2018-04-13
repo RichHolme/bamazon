@@ -25,12 +25,14 @@ function start() {
   // console.log('called');
   // var query = "SELECT * FROM products";
   connection.query("SELECT * FROM products", function(err, res) {
+    console.log('');
     for (var i = 0; i < res.length; i++) {
       console.log("Id: " + res[i].id + " || Product Name: " + res[i].productName + " || Department Name: " + res[i].departmentName + " || Price: " + res[i].price + " || Quantity: " + res[i].quantity);
       run += 1;
     }
 
     if(run == 10){
+      console.log('');
       ask();
     }
   });
@@ -68,9 +70,11 @@ function search(id, amount){
     if (err) throw err;
     var price = res[0].price;
     var inDatabse = res[0].quantity;
+    var totalSales = res[0].sales;
     var payment = 0;
     var updateWith = 0;
-
+    var updateSales = 0;
+    console.log('totalSales: ' + totalSales);
     if(inDatabse < amount){
       console.log('Insuficient quantity!')
     }else{
@@ -78,17 +82,22 @@ function search(id, amount){
       
       updateWith = inDatabse - amount;
 
-      update(id, updateWith, payment);
+      updateSales = payment + totalSales;
+      // console.log('updateSales: ' + updateSales);
+      update(id, updateWith, payment, updateSales);
     }
 
   });
 }
 
-function update(id, updateWith, payment){
+function update(id, updateWith, payment, updateSales){
   // console.log(id, updateWith);
+  console.log('updateSales: ' + updateSales);
   var query = "UPDATE products SET ?  WHERE ?";
-  connection.query(query, [{quantity: updateWith}, {id : id}], function(err, res) {
+  connection.query(query, [{quantity: updateWith, sales: updateSales}, {id : id}], function(err, res) {
+    console.log('');
     console.log('Your order was sucessfull! You owe $' + payment + '.');
+    console.log('');
     start();
   });
 }

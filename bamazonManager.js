@@ -21,7 +21,7 @@ connection.connect(function(err) {
 });
 
 function start() {
-
+  console.log('');
 	 inquirer
     .prompt([
     {
@@ -149,10 +149,10 @@ function addProduct(){
     	var department = answer.department;
     	var price = parseFloat(answer.price);
     	var quantity = parseInt(answer.quantity);
-    	console.log(name, department, price, quantity);
+    	console.log('');
     	var query = "INSERT INTO products SET ?";
   		connection.query(query, {productName: name, departmentName: department, price: price, quantity: quantity}, function(err, res) {
-    		console.log('sucessfull!');
+    		console.log('Sucess you added ' + name + ' to the product table.');
     		// start();
   		});
     });

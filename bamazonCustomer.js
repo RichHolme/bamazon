@@ -74,7 +74,7 @@ function search(id, amount){
     var payment = 0;
     var updateWith = 0;
     var updateSales = 0;
-    console.log('totalSales: ' + totalSales);
+    // console.log('totalSales: ' + totalSales);
     if(inDatabse < amount){
       console.log('Insuficient quantity!')
     }else{
@@ -92,7 +92,7 @@ function search(id, amount){
 
 function update(id, updateWith, payment, updateSales){
   // console.log(id, updateWith);
-  console.log('updateSales: ' + updateSales);
+  // console.log('updateSales: ' + updateSales);
   var query = "UPDATE products SET ?  WHERE ?";
   connection.query(query, [{quantity: updateWith, sales: updateSales}, {id : id}], function(err, res) {
     console.log('');

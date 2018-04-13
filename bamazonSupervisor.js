@@ -76,7 +76,7 @@ function view(){
   });
 
   function setTable(totalsArr){
-    console.log(totalsArr);
+    // console.log(totalsArr);
     connection.query("SELECT * FROM departments", function(err, res) {
       console.log('');
       var table = new Table({
@@ -85,10 +85,10 @@ function view(){
       for (var i = 0; i < res.length; i++) {
         var arr = [];
         var total = parseFloat(totalsArr[i]);
-        console.log(total);
+        // console.log(total);
         if(!total){
           total = 0; 
-          console.log(total);
+          // console.log(total);
         }
         var totalSales = total - parseInt(res[i].over_head);
         arr.push(res[i].departmentid, res[i].departmentName, res[i].over_head, total, totalSales);

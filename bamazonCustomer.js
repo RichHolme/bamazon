@@ -31,13 +31,13 @@ function start() {
       run += 1;
     }
 
-    if(run == 10){
-      console.log('');
-      ask();
-    }
+    // if(run == 10){
+    //   console.log('');
+    //   ask();
+    // }
+    console.log('');
+    ask()
   });
-
-  // ask();
   
 }
 

@@ -70,6 +70,9 @@ function low(){
      
     }
 
+    if(res.length == 0){
+      console.log('No low inventory at this time.')
+    }
   	console.log('');
     // start();
     

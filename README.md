@@ -1,50 +1,54 @@
 #  bamazon
 
------------------------------------------
-bamazonCustomer.js
+### Overview
 
+Command line Node.js app that hosts products for purchase on a MySQL database. Complete with customer, manager and supervisor access rights.
 
-would you like to buy?
+### Customer View
+
+#### Would you like to buy?
 
 ![alt text](working_pics/customer1.jpg)
 
-insufficient funds
+#### Insufficient funds.
 
 ![alt text](working_pics/insufficient.jpg)
 
-------------------------------------------
-bamazonManager.js
+### Manager View
 
-view products / view low products
+#### View products / view low products.
 
 ![alt text](working_pics/productView&Low.jpg)
 
-add inventory
+#### Add inventory.
 
 ![alt text](working_pics/add.jpg)
 
-add new product
+#### Add new product.
 
 ![alt text](working_pics/new.jpg)
 
--------------------------------------------
-bamazonSupervisor.js
+### Supervisor View
 
-view table
+#### View table.
 
 ![alt text](working_pics/table.jpg)
 
-add new department
+#### Add new department.
 
 ![alt text](working_pics/addDepartment.jpg)
 
--------------------------------------------
+### MySQL Tables
 
-product table
+#### Product table.
 
 ![alt text](working_pics/products.jpg)
 
-department table
+#### Department table.
 
 ![alt text](working_pics/department.jpg)
+
+### Core Technology
+
+- MySQL
 
